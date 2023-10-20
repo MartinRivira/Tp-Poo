@@ -107,5 +107,5 @@ if __name__ == "__main__":
     supermarket = Supermarket()
     supermarket.checkout(cart)
 
-    # Imprimir el total con descuento
+
     print(f"Total con descuento: ${discounted_total}")
