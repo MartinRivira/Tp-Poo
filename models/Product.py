@@ -1,12 +1,14 @@
-from models.Cart import Cart
-from models.Product import Product
+from abc import ABC, abstractmethod
 
-
-class Product:
+class AbstractProduct(ABC):
     def __init__(self, name, price):
         self.name = name
         self.price = price
 
+    @abstractmethod
     def get_discount(self):
-        return 0  # Opcional: Implementa un método de descuento específico si es necesario
+        pass
 
+class Product(AbstractProduct):
+    def get_discount(self):
+        return 0

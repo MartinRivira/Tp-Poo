@@ -1,9 +1,11 @@
-from models.Supermarket import Supermarket
+from models.cart import Cart
 
 class CartService:
     def __init__(self):
-        pass
+        self.cart = Cart()
 
-    def checkout(self, cart):
-        supermarket = Supermarket()
-        supermarket.checkout(cart)
+    def add_product(self, product):
+        self.cart.add_item(product)
+
+    def calculate_total_cost(self):
+        return self.cart.calculate_total_cost()

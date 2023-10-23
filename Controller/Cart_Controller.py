@@ -1,11 +1,12 @@
-from models.Discount_Handler import DiscountHandler
-from models.Cart import Cart
-from Controller.Cart_Controller import CartController
+from service.Cart_Service import CartService
 
 class CartController:
     def __init__(self):
-        pass
+        self.cart_service = CartService()
 
-    def apply_discount(self, cart, discount_handler):
-        discounted_total = discount_handler.apply_discount(cart)
-        return discounted_total
+    def add_product(self, product):
+        self.cart_service.add_product(product)  
+
+    def calculate_total_cost(self):
+        return self.cart_service.calculate_total_cost()
+
