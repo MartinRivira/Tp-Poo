@@ -1,5 +1,6 @@
 from models.cart import Cart
 
+
 class CartService:
     def __init__(self):
         self.cart = Cart()
@@ -9,3 +10,4 @@ class CartService:
 
     def calculate_total_cost(self):
         return self.cart.calculate_total_cost()
+

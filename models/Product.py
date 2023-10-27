@@ -11,4 +11,7 @@ class AbstractProduct(ABC):
 
 class Product(AbstractProduct):
     def get_discount(self):
-        return 0
+        return 1
+
+if __name__ == "__main__":
+    leche = Product("leche", 340)  
