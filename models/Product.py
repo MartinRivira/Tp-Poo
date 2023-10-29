@@ -1,17 +1,16 @@
 from abc import ABC, abstractmethod
 
-class AbstractProduct(ABC):
+class Product:
     def __init__(self, name, price):
         self.name = name
         self.price = price
+        self.discount = 0.5
 
-    @abstractmethod
-    def get_discount(self):
-        pass
+    def set_discount(self, discount):
+        self.discount = discount
 
-class Product(AbstractProduct):
-    def get_discount(self):
-        return 1
+    def get_discounted_price(self):
+        return self.price * (1 - self.discount)
 
-if __name__ == "__main__":
-    leche = Product("leche", 340)  
+    def __str__(self):
+        return f"Product: {self.name}, Price: ${self.price}, Discount: {self.discount * 100}%"

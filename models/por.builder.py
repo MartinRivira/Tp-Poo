@@ -1,34 +1,18 @@
-from abc import ABC, abstractmethod
-
-class ProductBuilder(ABC):
-    @abstractmethod
-    def set_name(self, name):
-        pass
-
-    @abstractmethod
-    def set_price(self, price):
-        pass
-
-    @abstractmethod
-    def set_discount(self, discount):
-        pass
-
-    @abstractmethod
-    def build(self):
-        pass
-
 class Product:
-    def __init__(self):
-        self.name = None
-        self.price = None
-        self.discount = None
+    def __init__(self, name, price, discount=0):
+        self.name = name
+        self.price = price
+        self.discount = discount
+
+    def get_discounted_price(self):
+        return self.price * (1 - self.discount)
 
     def __str__(self):
-        return f"Product: {self.name}, Price: {self.price}, Discount: {self.discount}"
+        return f"Product: {self.name}, Price: ${self.price}, Discount: {self.discount * 100}%"
 
-class ConcreteProductBuilder(ProductBuilder):
+class ProductBuilder:
     def __init__(self):
-        self.product = Product()
+        self.product = Product("", 0, 0)  
 
     def set_name(self, name):
         self.product.name = name
@@ -45,8 +29,8 @@ class ConcreteProductBuilder(ProductBuilder):
     def build(self):
         return self.product
 
-# Uso del Builder
-builder = ConcreteProductBuilder()
+# Ejemplo de uso del Builder
+builder = ProductBuilder()
 leche = builder.set_name("Leche").set_price(340).set_discount(0.1).build()
 sandia = builder.set_name("Sandia").set_price(1174).set_discount(0.05).build()
 
