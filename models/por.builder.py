@@ -29,10 +29,12 @@ class ProductBuilder:
     def build(self):
         return self.product
 
-# Ejemplo de uso del Builder
+
 builder = ProductBuilder()
 leche = builder.set_name("Leche").set_price(340).set_discount(0.1).build()
 sandia = builder.set_name("Sandia").set_price(1174).set_discount(0.05).build()
+oreo = builder.set_name("oreo").set_price(423).set_discount(0.5).build()
 
 print(leche)
 print(sandia)
+print(oreo)

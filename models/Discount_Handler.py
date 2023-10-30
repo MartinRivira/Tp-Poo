@@ -16,9 +16,14 @@ class DiscountHandler:
 
 class LecheDiscountHandler(DiscountHandler):
     def __init__(self):
-        super().__init__(0.1)  
+        super().__init__(0.3)  
 
 
 class SandiaDiscountHandler(DiscountHandler):
     def __init__(self):
-        super().__init__(0.05)  
+        super().__init__(0.1) 
+
+class OreoDiscountHandler(DiscountHandler):
+    def __init__(self):
+        super().__init__(0.1)  
+        
