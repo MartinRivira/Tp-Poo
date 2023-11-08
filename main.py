@@ -1,6 +1,6 @@
 from controller.cart_controller import CartController
-from domain.product import Product
-from domain.Discount_Handler import LecheDiscountHandler, SandiaDiscountHandler, OreoDiscountHandler
+from models.product import Product
+from models.Discount_Handler import LecheDiscountHandler, SandiaDiscountHandler, OreoDiscountHandler
 from service.Cart_Service import CartService
 
 if __name__ == "__main__":
