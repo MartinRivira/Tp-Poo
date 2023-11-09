@@ -1,4 +1,4 @@
-from models.cart import Cart
+from domain.cart import Cart
 
 class CartService:
     def __init__(self):
